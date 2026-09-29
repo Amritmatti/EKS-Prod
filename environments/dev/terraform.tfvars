@@ -1,4 +1,4 @@
-project     = "myapp"
+project     = "cfs"
 environment = "dev"
 region      = "us-east-1"
 
@@ -6,8 +6,8 @@ region      = "us-east-1"
 allowed_account_ids = ["222222222222"]
 
 tags = {
-  Owner      = "platform-team"
-  CostCenter = "engineering"
+  Owner      = "DevOps-Team"
+  CostCenter = "Engineering"
 }
 
 ################################################################################
@@ -28,7 +28,7 @@ kubernetes_version = "1.34"
 
 # Public API, but only from your office / VPN egress IPs.
 endpoint_public_access       = true
-endpoint_public_access_cidrs = ["203.0.113.0/24"] # CHANGE-ME
+endpoint_public_access_cidrs = ["103.181.153.115/32"] # CHANGE-ME
 api_allowed_cidrs            = []
 
 cluster_log_retention_days = 14
@@ -39,7 +39,7 @@ access_entries = {}
 
 node_groups = {
   general = {
-    instance_types = ["m7i.large", "m6i.large", "m5.large"]
+    instance_types = ["t3.large", "t3.xlarge", "t3.2xlarge"]
     capacity_type  = "SPOT"
     min_size       = 2
     max_size       = 5
